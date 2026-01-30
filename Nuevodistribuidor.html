@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Bienestar & Oportunidad | Jennifer Andrés</title>
+<meta name="description" content="Productos de nutrición Herbalife o desarrolla tu propia actividad independiente. Acompañamiento profesional.">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+:root{
+  --green:#2E7D32;
+  --green-light:#66BB6A;
+  --yellow:#FBC02D;
+  --dark:#0f1f14;
+  --white:#ffffff;
+  --gradient:linear-gradient(135deg,#1b3a25,#0f1f14);
+  --product:#1976D2;
+  --product-light:#42A5F5;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,system-ui,sans-serif}
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--gradient);
+  color:var(--white);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:60px;
+  height:60px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  z-index:1001;
+  animation:pulse 2s infinite;
+  transition:.3s;
+}
+.whatsapp-float:hover{transform:scale(1.1)}
+@keyframes pulse{
+  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}
+  50%{box-shadow:0 4px 30px rgba(37,211,102,.8)}
+}
+
+/* HEADER */
+.top-bar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  background:linear-gradient(90deg,#2E7D32,#388E3C);
+  text-align:center;
+  padding:12px;
+  font-size:.9rem;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.sticky{
+  position:fixed;
+  top:44px;
+  left:0;
+  right:0;
+  background:rgba(15,31,20,.95);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 5%;
+  border-bottom:1px solid rgba(102,187,106,.2);
+  transform:translateY(-120%);
+  transition:.3s;
+  z-index:999;
+}
+.sticky.visible{transform:translateY(0)}
+
+/* DUAL CTA BUTTONS */
+.cta-group{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.cta{
+  padding:15px 32px;
+  border-radius:40px;
+  border:none;
+  color:white;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
+
+/* Product Button */
+.cta-product{
+  background:linear-gradient(135deg,var(--product),var(--product-light));
+  box-shadow:0 4px 25px rgba(25,118,210,.45);
+}
+.cta-product:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 30px rgba(25,118,210,.6);
+}
+
+/* Business Button */
+.cta-business{
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+  box-shadow:0 4px 25px rgba(102,187,106,.45);
+}
+.cta-business:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 30px rgba(102,187,106,.6);
+}
+
+.cta-outline{
+  background:transparent;
+  border:2px solid var(--green-light);
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:170px 20px 90px;
+}
+.hero-content{max-width:900px}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 22px;
+  border-radius:30px;
+  background:rgba(102,187,106,.15);
+  border:1px solid var(--green-light);
+  color:var(--green-light);
+  font-size:.85rem;
+  margin-bottom:25px;
+}
+
+h1{
+  font-size:clamp(2.1rem,5vw,3.4rem);
+  margin-bottom:22px;
+  color:var(--green-light);
+}
+
+.hero p{
+  max-width:680px;
+  margin:0 auto 35px;
+  opacity:.9;
+  font-size:1.15rem;
+}
+
+/* CHOICE CARDS */
+.choice-section{
+  background:rgba(255,255,255,.03);
+  border-radius:30px;
+  padding:60px 40px;
+  margin:40px auto;
+  max-width:1000px;
+}
+.choice-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+.choice-card{
+  background:rgba(255,255,255,.05);
+  border-radius:20px;
+  padding:40px 30px;
+  border:2px solid transparent;
+  transition:.4s;
+  text-align:center;
+}
+.choice-card:hover{
+  transform:translateY(-8px);
+  background:rgba(255,255,255,.08);
+}
+.choice-card.product{
+  border-color:rgba(25,118,210,.3);
+}
+.choice-card.product:hover{
+  border-color:var(--product);
+  box-shadow:0 10px 40px rgba(25,118,210,.2);
+}
+.choice-card.business{
+  border-color:rgba(102,187,106,.3);
+}
+.choice-card.business:hover{
+  border-color:var(--green-light);
+  box-shadow:0 10px 40px rgba(102,187,106,.2);
+}
+.choice-icon{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 25px;
+  color:white;
+}
+.choice-card.product .choice-icon{
+  background:linear-gradient(135deg,var(--product),var(--product-light));
+  box-shadow:0 4px 20px rgba(25,118,210,.4);
+}
+.choice-card.business .choice-icon{
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+  box-shadow:0 4px 20px rgba(102,187,106,.4);
+}
+.choice-card h3{
+  font-size:1.5rem;
+  margin-bottom:15px;
+}
+.choice-card.product h3{color:var(--product-light)}
+.choice-card.business h3{color:var(--green-light)}
+.choice-card ul{
+  text-align:left;
+  margin:25px 0;
+  list-style:none;
+}
+.choice-card li{
+  padding:8px 0;
+  padding-left:28px;
+  position:relative;
+  opacity:.9;
+}
+.choice-card li::before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  font-weight:bold;
+}
+.choice-card.product li::before{color:var(--product-light)}
+.choice-card.business li::before{color:var(--green-light)}
+
+/* SOCIAL PROOF */
+.social-hero{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin:40px 0;
+  flex-wrap:wrap;
+}
+.social-item{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+.social-item i{color:var(--green-light)}
+.social-number{
+  font-size:2.2rem;
+  font-weight:bold;
+  color:var(--yellow);
+  line-height:1;
+}
+.social-label{font-size:.85rem;opacity:.8}
+
+/* SECTIONS */
+section{padding:90px 5%;max-width:1200px;margin:0 auto}
+h2{
+  text-align:center;
+  color:var(--yellow);
+  margin-bottom:15px;
+  font-size:2.1rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+.subtitle{text-align:center;max-width:650px;margin:0 auto 55px;opacity:.85}
+
+/* ICON CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.card{
+  background:rgba(255,255,255,.05);
+  padding:38px 32px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  background:rgba(255,255,255,.08);
+  border-color:rgba(102,187,106,.3);
+}
+.card-icon{
+  width:65px;
+  height:65px;
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 20px;
+  color:white;
+  box-shadow:0 4px 20px rgba(102,187,106,.3);
+}
+.card h3{color:var(--green-light);margin-bottom:12px}
+
+/* TESTIMONIALS */
+.testimonials{
+  background:linear-gradient(180deg,rgba(102,187,106,.08),transparent);
+  border-radius:30px;
+  padding:65px 40px;
+}
+.test-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:32px;
+}
+.test{
+  background:rgba(255,255,255,.06);
+  padding:35px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.1);
+  position:relative;
+}
+.test::before{
+  content:'"';
+  position:absolute;
+  top:15px;
+  left:20px;
+  font-size:4rem;
+  color:var(--green-light);
+  opacity:.2;
+  font-family:Georgia,serif;
+}
+.test-header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:20px;
+}
+.test-avatar{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  color:white;
+  font-size:1.2rem;
+}
+.test-info{flex:1}
+.test-info strong{color:var(--green-light);display:block;margin-bottom:4px}
+.test-info span{font-size:.85rem;opacity:.7}
+.test-stars{
+  display:flex;
+  gap:3px;
+  margin-top:8px;
+}
+.test-stars i{
+  color:var(--yellow);
+  fill:var(--yellow);
+  width:16px;
+  height:16px;
+}
+.test p{
+  font-style:italic;
+  opacity:.9;
+  line-height:1.7;
+  position:relative;
+  z-index:1;
+}
+
+/* FAQ */
+.faq-section{
+  background:rgba(255,255,255,.03);
+  border-radius:30px;
+  padding:65px 40px;
+}
+.faq-item{
+  background:rgba(255,255,255,.05);
+  border-radius:14px;
+  margin-bottom:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+}
+.faq-question{
+  padding:25px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:600;
+  transition:.3s;
+  gap:15px;
+}
+.faq-question:hover{background:rgba(255,255,255,.03)}
+.faq-question i:first-child{color:var(--green-light);flex-shrink:0}
+.faq-icon{
+  color:var(--green-light);
+  transition:.3s;
+  flex-shrink:0;
+}
+.faq-item.active .faq-icon{transform:rotate(45deg)}
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:.4s;
+  padding:0 25px;
+}
+.faq-item.active .faq-answer{
+  max-height:300px;
+  padding:0 25px 25px;
+}
+.faq-answer p{opacity:.85;line-height:1.7;padding-left:35px}
+
+/* FORM */
+.form-section{
+  background:rgba(255,255,255,.03);
+  border-radius:30px;
+  padding:65px 40px;
+  text-align:center;
+}
+.form-progress{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:30px;
+}
+.progress-dot{
+  width:40px;
+  height:4px;
+  background:rgba(255,255,255,.2);
+  border-radius:2px;
+  transition:.3s;
+}
+.progress-dot.active{background:var(--green-light)}
+
+.form-step{display:none;animation:fadeUp .5s ease}
+.form-step.active{display:block}
+
+.form-box{
+  background:rgba(255,255,255,.05);
+  padding:45px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.1);
+  max-width:520px;
+  margin:0 auto;
+  text-align:left;
+}
+.form-group{
+  position:relative;
+  margin-bottom:18px;
+}
+.form-group i{
+  position:absolute;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--green-light);
+  opacity:.7;
+}
+.form-group input,
+.form-group select{
+  width:100%;
+  padding:16px 16px 16px 48px;
+  border-radius:12px;
+  border:2px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.05);
+  color:white;
+  font-size:1rem;
+  transition:.3s;
+}
+.form-group input:focus,
+.form-group select:focus{
+  outline:none;
+  border-color:var(--green-light);
+  background:rgba(255,255,255,.08);
+}
+select option{background:var(--dark)}
+
+.form-note{
+  font-size:.75rem;
+  opacity:.6;
+  margin-top:15px;
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.trust-badges{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+.trust-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:.85rem;
+  opacity:.7;
+}
+.trust-item i{color:var(--green-light)}
+
+/* FOOTER */
+footer{
+  padding:55px 20px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.contact-footer{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin:20px 0;
+  flex-wrap:wrap;
+}
+.contact-footer a{
+  color:var(--white);
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  opacity:.9;
+  transition:.3s;
+}
+.contact-footer a:hover{
+  color:var(--green-light);
+  opacity:1;
+}
+.disclaimer{
+  font-size:.75rem;
+  opacity:.5;
+  max-width:900px;
+  margin:25px auto 0;
+  line-height:1.6;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .social-hero{gap:25px}
+  .social-number{font-size:1.8rem}
+  .choice-grid{grid-template-columns:1fr}
+  .contact-footer{flex-direction:column;gap:15px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/34643466223?text=Hola%20Jennifer,%20tengo%20interés%20en%20tus%20productos/oportunidad" 
+   class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<div class="top-bar">
+  <i data-lucide="sparkles" style="width:18px;height:18px"></i>
+  ¿Buscas productos o una oportunidad de negocio? Tienes ambas opciones aquí
+</div>
+
+<div class="sticky" id="sticky">
+  <div style="display:flex;align-items:center;gap:10px">
+    <i data-lucide="leaf" style="color:var(--green-light)"></i>
+    <strong style="color:var(--green-light)">Jennifer Andrés</strong>
+  </div>
+  <div class="cta-group">
+    <a href="https://jenniferdiana.herbalife.com/es-es/u" target="_blank" class="cta cta-product" style="padding:10px 20px;font-size:.9rem">
+      <i data-lucide="shopping-bag" style="width:16px;height:16px"></i>
+      Productos
+    </a>
+    <button class="cta cta-business" onclick="goForm()" style="padding:10px 20px;font-size:.9rem">
+      <i data-lucide="briefcase" style="width:16px;height:16px"></i>
+      Negocio
+    </button>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="badge">
+      <i data-lucide="award" style="width:16px;height:16px"></i>
+      Distribuidora Independiente Oficial Herbalife
+    </div>
+    <h1>Tu bienestar, tu elección</h1>
+    <p>
+      Puedes adquirir productos de nutrición de calidad para tu día a día, 
+      o si buscas algo más, desarrollar una actividad independiente con mi acompañamiento.
+    </p>
+    
+    <!-- DUAL CHOICE SECTION -->
+    <div class="choice-section">
+      <h2 style="margin-bottom:10px">¿Qué estás buscando?</h2>
+      <p class="subtitle" style="margin-bottom:0">Dos caminos, una misma calidad</p>
+      
+      <div class="choice-grid">
+        <!-- PRODUCTS -->
+        <div class="choice-card product reveal">
+          <div class="choice-icon">
+            <i data-lucide="shopping-cart" style="width:36px;height:36px"></i>
+          </div>
+          <h3>Comprar Productos</h3>
+          <p>Nutrición de calidad para tu día a día</p>
+          <ul>
+            <li>Compra directa sin intermediarios</li>
+            <li>Envío a domicilio en 24-48h</li>
+            <li>Asesoramiento personalizado</li>
+            <li>Descuentos por volumen</li>
+          </ul>
+          <a href="https://jenniferdiana.herbalife.com/es-es/u" target="_blank" class="cta cta-product" style="width:100%;justify-content:center">
+            <i data-lucide="external-link" style="width:20px;height:20px"></i>
+            Ir a la tienda oficial
+          </a>
+          <p style="font-size:.8rem;opacity:.7;margin-top:15px">
+            <i data-lucide="shield-check" style="width:14px;height:14px;vertical-align:middle"></i>
+            Web oficial Herbalife segura
+          </p>
+        </div>
+        
+        <!-- BUSINESS -->
+        <div class="choice-card business reveal">
+          <div class="choice-icon">
+            <i data-lucide="trending-up" style="width:36px;height:36px"></i>
+          </div>
+          <h3>Ser Distribuidora</h3>
+          <p>Desarrolla tu propia actividad independiente</p>
+          <ul>
+            <li>Acompañamiento personalizado</li>
+            <li>Formación continua gratuita</li>
+            <li>Horario flexible desde casa</li>
+            <li>Ingresos según tu dedicación</li>
+          </ul>
+          <button class="cta cta-business" onclick="goForm()" style="width:100%;justify-content:center">
+            <i data-lucide="calendar-plus" style="width:20px;height:20px"></i>
+            Solicitar entrevista
+          </button>
+          <p style="font-size:.8rem;opacity:.7;margin-top:15px">
+            <i data-lucide="info" style="width:14px;height:14px;vertical-align:middle"></i>
+            No garantiza ingresos - requiere dedicación
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="social-hero">
+      <div class="social-item">
+        <i data-lucide="users" style="width:28px;height:28px"></i>
+        <span class="social-number" id="counter">64</span>
+        <span class="social-label">clientas satisfechas</span>
+      </div>
+      <div class="social-item">
+        <i data-lucide="package" style="width:28px;height:28px"></i>
+        <span class="social-number">500+</span>
+        <span class="social-label">pedidos enviados</span>
+      </div>
+      <div class="social-item">
+        <i data-lucide="heart" style="width:28px;height:28px"></i>
+        <span class="social-number">4.9</span>
+        <span class="social-label">valoración media</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="reveal">
+  <h2>
+    <i data-lucide="heart-handshake" style="width:32px;height:32px"></i>
+    ¿Por qué confiar en mí?
+  </h2>
+  <p class="subtitle">Ya sea para productos o para el negocio, mi compromiso es el mismo.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">
+        <i data-lucide="shield-check" style="width:28px;height:28px"></i>
+      </div>
+      <h3>Distribuidora Oficial</h3>
+      <p>Registrada en Herbalife con acceso directo a productos originales y garantía oficial.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <i data-lucide="user-check" style="width:28px;height:28px"></i>
+      </div>
+      <h3>Asesoramiento Real</h3>
+      <p>No vendo por vender. Te ayudo a elegir lo que realmente necesitas para tus objetivos.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <i data-lucide="truck" style="width:28px;height:28px"></i>
+      </div>
+      <h3>Envío Rápido</h3>
+      <p>Entrega en 24-48 horas. Seguimiento de pedido y atención post-venta.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <i data-lucide="message-circle" style="width:28px;height:28px"></i>
+      </div>
+      <h3>WhatsApp Directo</h3>
+      <p>Contacto directo conmigo para dudas, seguimiento o pedidos. Respuesta en 24h.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials reveal">
+  <h2>
+    <i data-lucide="message-square-heart" style="width:32px;height:32px"></i>
+    Lo que dicen mis clientas
+  </h2>
+  <p class="subtitle">Opiniones verificadas de quienes han confiado en mí.</p>
+  <div class="test-grid">
+    <div class="test">
+      <div class="test-header">
+        <div class="test-avatar">L</div>
+        <div class="test-info">
+          <strong>Laura M.</strong>
+          <span>Cliente de productos · Madrid</span>
+          <div class="test-stars">
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+          </div>
+        </div>
+      </div>
+      <p>"Los productos llegaron en 24h y Jennifer me asesoró perfectamente sobre qué necesitaba. Sin presión, solo soluciones."</p>
+    </div>
+    <div class="test">
+      <div class="test-header">
+        <div class="test-avatar">P</div>
+        <div class="test-info">
+          <strong>Patricia R.</strong>
+          <span>Distribuidora en mi equipo · Barcelona</span>
+          <div class="test-stars">
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+          </div>
+        </div>
+      </div>
+      <p>"Empecé como clienta y vi la oportunidad. Jennifer me enseñó todo desde cero. Hoy tengo mi propia clientela."</p>
+    </div>
+    <div class="test">
+      <div class="test-header">
+        <div class="test-avatar">C</div>
+        <div class="test-info">
+          <strong>Carmen S.</strong>
+          <span>Cliente de productos · Valencia</span>
+          <div class="test-stars">
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+          </div>
+        </div>
+      </div>
+      <p>"Llevaba años probando productos de nutrición. Los de Herbalife son los únicos que me han funcionado. Jennifer te explica todo."</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq-section reveal">
+  <h2>
+    <i data-lucide="help-circle" style="width:32px;height:32px"></i>
+    Preguntas frecuentes
+  </h2>
+  <p class="subtitle">Aclaramos tus dudas antes de que decidas.</p>
+  
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <i data-lucide="package" style="width:22px;height:22px"></i>
+      <span style="flex:1">¿Cómo compro productos?</span>
+      <i data-lucide="plus" class="faq-icon"></i>
+    </div>
+    <div class="faq-answer">
+      <p>Haz clic en "Ir a la tienda oficial" y serás redirigida a mi web oficial de Herbalife. Allí puedes comprar directamente con envío a domicilio. Si tienes dudas sobre qué elegir, escríbeme por WhatsApp antes de comprar.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <i data-lucide="truck" style="width:22px;height:22px"></i>
+      <span style="flex:1">¿Cuánto tarda el envío?</span>
+      <i data-lucide="plus" class="faq-icon"></i>
+    </div>
+    <div class="faq-answer">
+      <p>Entre 24 y 48 horas laborables en toda España. Recibirás un email con el seguimiento del pedido. Envío gratuito en pedidos superiores a 100€.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <i data-lucide="heart-question" style="width:22px;height:22px"></i>
+      <span style="flex:1">¿Los productos son seguros?</span>
+      <i data-lucide="plus" class="faq-icon"></i>
+    </div>
+    <div class="faq-answer">
+      <p>Sí. Herbalife es una empresa cotizada en bolsa con más de 40 años de historia. Los productos cumplen todas las normativas europeas y tienen garantía de calidad. Compras directamente en la web oficial, no a través de terceros.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <i data-lucide="briefcase" style="width:22px;height:22px"></i>
+      <span style="flex:1">¿Puedo empezar como clienta y luego ser distribuidora?</span>
+      <i data-lucide="plus" class="faq-icon"></i>
+    </div>
+    <div class="faq-answer">
+      <p>Absolutamente. De hecho, es la mejor forma de empezar: pruebas los productos, ves los resultados y si te apasiona, hablamos de la oportunidad de negocio. Muchas de mis distribuidoras empezaron así.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <i data-lucide="shield-question" style="width:22px;height:22px"></i>
+      <span style="flex:1">¿Es una estafa o pirámide?</span>
+      <i data-lucide="plus" class="faq-icon"></i>
+    </div>
+    <div class="faq-answer">
+      <p>No. Herbalife es una empresa legal cotizada en bolsa desde 1986. El modelo es multinivel legal: si decides ser distribuidora, ganas principalmente por vender productos, no por reclutar. Te explico todo con transparencia en la entrevista, sin compromiso.</p>
+    </div>
+  </div>
+</section>
+
+<section id="form" class="form-section reveal">
+  <h2>
+    <i data-lucide="mail-plus" style="width:32px;height:32px"></i>
+    ¿Interesada en el negocio?
+  </h2>
+  <p class="subtitle">Si buscas algo más que productos, hablemos. Dos pasos, sin compromiso.</p>
+  
+  <div class="form-progress">
+    <div class="progress-dot active" id="dot1"></div>
+    <div class="progress-dot" id="dot2"></div>
+  </div>
+  
+  <!-- Step 1 -->
+  <div class="form-step active" id="step1">
+    <div class="form-box">
+      <h3 style="color:var(--green-light);margin-bottom:10px;display:flex;align-items:center;gap:10px">
+        <i data-lucide="user" style="width:20px;height:20px"></i>
+        Paso 1 de 2
+      </h3>
+      <p style="opacity:.8;margin-bottom:25px">Tus datos de contacto</p>
+      
+      <div class="form-group">
+        <i data-lucide="user" style="width:20px;height:20px"></i>
+        <input type="text" id="name1" placeholder="Nombre completo" required>
+      </div>
+      
+      <div class="form-group">
+        <i data-lucide="phone" style="width:20px;height:20px"></i>
+        <input type="tel" id="phone1" placeholder="WhatsApp" required>
+      </div>
+      
+      <button class="cta cta-business" onclick="goToStep2()" style="width:100%">
+        Continuar
+        <i data-lucide="arrow-right" style="width:20px;height:20px"></i>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Step 2 -->
+  <div class="form-step" id="step2">
+    <div class="form-box">
+      <h3 style="color:var(--green-light);margin-bottom:10px;display:flex;align-items:center;gap:10px">
+        <i data-lucide="clipboard-list" style="width:20px;height:20px"></i>
+        Paso 2 de 2
+      </h3>
+      <p style="opacity:.8;margin-bottom:25px">Cuéntame tu situación</p>
+      
+      <div class="form-group">
+        <i data-lucide="briefcase" style="width:20px;height:20px"></i>
+        <select id="situation2" required>
+          <option value="" disabled selected>¿Cuál es tu situación actual?</option>
+          <option>Solo quiero productos por ahora</option>
+          <option>Curiosa sobre el negocio</option>
+          <option>Busco ingresos extra seriamente</option>
+          <option>Quiero cambiar mi situación laboral</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <i data-lucide="mail" style="width:20px;height:20px"></i>
+        <input type="email" id="email2" placeholder="Email (opcional)">
+      </div>
+      
+      <button class="cta cta-business" onclick="submitForm()" style="width:100%">
+        <i data-lucide="send" style="width:20px;height:20px"></i>
+        Enviar solicitud
+      </button>
+      
+      <button onclick="goToStep1()" style="background:none;border:none;color:var(--green-light);margin-top:15px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:8px;width:100%">
+        <i data-lucide="arrow-left" style="width:16px;height:16px"></i>
+        Volver atrás
+      </button>
+    </div>
+  </div>
+  
+  <div class="trust-badges">
+    <div class="trust-item">
+      <i data-lucide="shield-check" style="width:18px;height:18px"></i>
+      Sin spam
+    </div>
+    <div class="trust-item">
+      <i data-lucide="clock" style="width:18px;height:18px"></i>
+      Respuesta en 24h
+    </div>
+    <div class="trust-item">
+      <i data-lucide="lock" style="width:18px;height:18px"></i>
+      100% confidencial
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="font-size:1.1rem;margin-bottom:10px">
+    <strong style="color:var(--green-light)">Jennifer Andrés</strong>
+  </p>
+  <p style="opacity:.8;margin-bottom:20px">Distribuidora Independiente Herbalife</p>
+  
+  <div class="contact-footer">
+    <a href="tel:+34643466223">
+      <i data-lucide="phone" style="width:18px;height:18px"></i>
+      643 46 62 23
+    </a>
+    <a href="mailto:infojennifer.distribucion@gmail.com">
+      <i data-lucide="mail" style="width:18px;height:18px"></i>
+      Email
+    </a>
+    <a href="https://wa.me/34643466223" target="_blank">
+      <i data-lucide="message-circle" style="width:18px;height:18px"></i>
+      WhatsApp
+    </a>
+    <a href="https://jenniferdiana.herbalife.com/es-es/u" target="_blank">
+      <i data-lucide="shopping-bag" style="width:18px;height:18px"></i>
+      Tienda Oficial
+    </a>
+  </div>
+  
+  <p>© 2026 · Todos los derechos reservados</p>
+  <p class="disclaimer">
+    Los productos Herbalife no están destinados a diagnosticar, tratar, curar o prevenir ninguna enfermedad. 
+    Los resultados individuales pueden variar. Los testimonios son experiencias personales. 
+    Esta página no es el sitio corporativo oficial de Herbalife Nutrition. 
+    Para compras, serás redirigida a la web oficial segura de Herbalife.
+  </p>
+</footer>
+
+<script>
+// Initialize Lucide icons
+lucide.createIcons();
+
+// Sticky header
+function goForm(){
+  document.getElementById("form").scrollIntoView({behavior:"smooth"});
+}
+window.addEventListener("scroll",()=>{
+  document.getElementById("sticky")
+    .classList.toggle("visible",window.scrollY>300);
+});
+
+// Counter animation
+window.addEventListener('load',()=>{
+  const counter=document.getElementById('counter');
+  let current=0;
+  const target=64;
+  const increment=target/40;
+  const timer=setInterval(()=>{
+    current+=increment;
+    if(current>=target){
+      counter.textContent=target;
+      clearInterval(timer);
+    } else {
+      counter.textContent=Math.floor(current);
+    }
+  },40);
+});
+
+// Two step form
+function goToStep2(){
+  if(document.getElementById('name1').value && document.getElementById('phone1').value){
+    document.getElementById('step1').classList.remove('active');
+    document.getElementById('step2').classList.add('active');
+    document.getElementById('dot1').classList.remove('active');
+    document.getElementById('dot2').classList.add('active');
+  } else {
+    alert('Por favor completa ambos campos');
+  }
+}
+
+function goToStep1(){
+  document.getElementById('step2').classList.remove('active');
+  document.getElementById('step1').classList.add('active');
+  document.getElementById('dot2').classList.remove('active');
+  document.getElementById('dot1').classList.add('active');
+}
+
+function submitForm(){
+  if(document.getElementById('situation2').value){
+    alert('Gracias Jennifer te contactará por WhatsApp en menos de 24 horas.');
+  } else {
+    alert('Por favor selecciona tu situación actual');
+  }
+}
+
+// FAQ toggle
+function toggleFaq(element){
+  element.parentElement.classList.toggle('active');
+}
+
+// Scroll reveal
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('active');
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
