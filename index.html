@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <title>Jennifer Andrés | Bienestar & Oportunidad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Productos Herbalife, asesoramiento personalizado y oportunidad de actividad independiente.">
+  <meta name="description" content="Productos Herbalife, asesoramiento personalizado y actividad independiente.">
 
   <!-- Google Analytics GA4 -->
+  <!-- Sustituye G-XXXXXXXXXX por tu ID real -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,7 +26,12 @@
       --bg:linear-gradient(135deg,#1b3a25,#0f1f14);
     }
 
-    *{box-sizing:border-box;margin:0;padding:0;font-family:Segoe UI,system-ui,sans-serif}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:Segoe UI,system-ui,sans-serif
+    }
 
     body{
       min-height:100vh;
@@ -61,13 +67,13 @@
     h1{
       font-size:1.5rem;
       color:var(--green-light);
-      margin-bottom:5px;
+      margin-bottom:4px;
     }
 
     .subtitle{
       font-size:.95rem;
       opacity:.8;
-      margin-bottom:25px;
+      margin-bottom:20px;
     }
 
     .badge{
@@ -78,7 +84,7 @@
       border:1px solid var(--green-light);
       color:var(--green-light);
       font-size:.8rem;
-      margin-bottom:20px;
+      margin-bottom:22px;
     }
 
     .links{
@@ -97,7 +103,6 @@
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.15);
       transition:.3s;
-      position:relative;
     }
 
     .link-btn:hover{
@@ -112,12 +117,14 @@
 
     .secondary{
       border:2px solid var(--green-light);
+      background:transparent;
     }
 
     .note{
       font-size:.75rem;
       opacity:.6;
       line-height:1.5;
+      margin-top:10px;
     }
 
     footer{
@@ -161,7 +168,7 @@
       </a>
 
       <!-- NEGOCIO -->
-      <a href="https://TU-WEB-NEGOCIO.github.io"
+      <a href="Nuevodistribuidor.html"
          class="link-btn secondary"
          onclick="trackClick('negocio')">
         💼 Información sobre actividad independiente
@@ -173,10 +180,17 @@
          onclick="trackClick('app')">
         🤖 Guía inteligente de nutrición (próximamente)
       </a>
+
+      <!-- EMAIL -->
+      <a href="mailto:infojenniferandres@gmail.com"
+         class="link-btn"
+         onclick="trackClick('email')">
+        📩 Contactar por email
+      </a>
     </div>
 
     <div class="note">
-      Sin promesas de ingresos · Actividad independiente · Requiere dedicación
+      Actividad independiente · Sin promesas de ingresos · Requiere dedicación
     </div>
 
     <footer>
