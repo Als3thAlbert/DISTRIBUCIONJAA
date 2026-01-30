@@ -53,14 +53,16 @@
       width:110px;
       height:110px;
       border-radius:50%;
-      background:linear-gradient(135deg,var(--green),var(--green-light));
       margin:0 auto 15px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:2.2rem;
-      font-weight:bold;
+      overflow:hidden;
       box-shadow:0 0 25px rgba(102,187,106,.5);
+      border:3px solid rgba(102,187,106,.6);
+    }
+
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
     h1{
@@ -142,7 +144,11 @@
 <body>
 
   <div class="container">
-    <div class="avatar">J</div>
+
+    <!-- FOTO PERFIL -->
+    <div class="avatar">
+      <img src="Screenshot_2026-01-30-11-48-52-023.jpg" alt="Jennifer Andrés">
+    </div>
 
     <h1>Jennifer Andrés</h1>
     <div class="subtitle">Distribuidora Independiente Herbalife</div>
@@ -150,6 +156,7 @@
     <div class="badge">Bienestar · Asesoramiento · Oportunidad</div>
 
     <div class="links">
+
       <!-- PRODUCTOS -->
       <a href="https://jenniferdiana.herbalife.com/es-es/u"
          class="link-btn primary"
@@ -173,7 +180,7 @@
         💼 Información sobre actividad independiente
       </a>
 
-      <!-- APP -->
+      <!-- APP FUTURA -->
       <a href="#"
          class="link-btn"
          onclick="trackClick('app')">
@@ -186,6 +193,7 @@
          onclick="trackClick('email')">
         📩 Contactar por email
       </a>
+
     </div>
 
     <div class="note">
@@ -195,8 +203,10 @@
     <footer>
       © 2026 · Jennifer Andrés
     </footer>
+
   </div>
 
+  <!-- TRACKING CLICS -->
   <script>
     function trackClick(label){
       if(typeof gtag === 'function'){
