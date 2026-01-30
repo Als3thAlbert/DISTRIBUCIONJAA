@@ -2,14 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bienestar & Oportunidad | Jennifer Andrés</title>
-<meta name="description" content="Productos de nutrición Herbalife o desarrolla tu propia actividad independiente. Acompañamiento profesional.">
 
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
-/* === ESTÉTICA ORIGINAL (NO TOCADA) === */
 :root{
   --green:#2E7D32;
   --green-light:#66BB6A;
@@ -20,116 +18,276 @@
   --product:#1976D2;
   --product-light:#42A5F5;
 }
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,system-ui,sans-serif}
-html{scroll-behavior:smooth}
-body{background:var(--gradient);color:var(--white);line-height:1.6;overflow-x:hidden}
+body{background:var(--gradient);color:white}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:120px 20px;
+}
+
+.hero-content{max-width:900px}
+
+h1{font-size:3rem;color:var(--green-light);margin-bottom:20px}
+
+.subtitle{opacity:.85;margin-bottom:40px}
+
+.choice-section{
+  background:rgba(255,255,255,.04);
+  border-radius:30px;
+  padding:50px;
+}
+
+.choice-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:30px;
+}
+
+.choice-card{
+  background:rgba(255,255,255,.05);
+  border-radius:20px;
+  padding:40px 30px;
+  text-align:center;
+  transition:.3s;
+}
+
+.choice-card:hover{transform:translateY(-6px)}
+
+.choice-icon{
+  width:80px;height:80px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+  color:white;
+}
+
+.product .choice-icon{
+  background:linear-gradient(135deg,var(--product),var(--product-light));
+}
+
+.business .choice-icon{
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+}
+
+.choice-card h3{font-size:1.6rem;margin-bottom:10px}
+
+.product h3{color:var(--product-light)}
+.business h3{color:var(--green-light)}
+
+.choice-card ul{
+  list-style:none;
+  text-align:left;
+  margin:25px 0;
+}
+
+.choice-card li{
+  padding-left:28px;
+  position:relative;
+  margin-bottom:8px;
+}
+
+.choice-card li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  font-weight:bold;
+}
+
+.product li::before{color:var(--product-light)}
+.business li::before{color:var(--green-light)}
+
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:15px;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  color:white;
+}
+
+.cta-product{
+  background:linear-gradient(135deg,var(--product),var(--product-light));
+}
+
+.cta-business{
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+}
+
+.form-section{
+  margin-top:80px;
+  background:rgba(255,255,255,.04);
+  padding:50px;
+  border-radius:30px;
+}
+
+.form-box{
+  max-width:480px;
+  margin:0 auto;
+}
+
+.form-group{
+  margin-bottom:15px;
+}
+
+.form-group input,
+.form-group select{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  background:rgba(255,255,255,.1);
+  color:white;
+}
+
+button{
+  border:none;
+  cursor:pointer;
+}
+
+.hidden{display:none}
 </style>
-<base target="_blank">
 </head>
 
 <body>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/34643466223" class="whatsapp-float" target="_blank"></a>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Tu bienestar, tu elección</h1>
+    <p class="subtitle">Dos caminos, una misma calidad</p>
 
-<!-- HERO / CONTENIDO OMITIDO POR BREVEDAD (NO CAMBIA NADA VISUAL) -->
-<!-- ⚠️ TODO TU HTML VISUAL SE MANTIENE EXACTAMENTE IGUAL -->
+    <div class="choice-section">
+      <h2>¿Qué estás buscando?</h2>
 
-<!-- ================= FORMULARIO ================= -->
-<section id="form" class="form-section reveal">
+      <div class="choice-grid">
 
-  <!-- STEP 1 -->
-  <div class="form-step active" id="step1">
-    <input type="text" id="name1" placeholder="Nombre completo" required>
-    <input type="tel" id="phone1" placeholder="WhatsApp" required>
-    <button onclick="goToStep2()">Continuar</button>
+        <!-- PRODUCTOS -->
+        <div class="choice-card product">
+          <div class="choice-icon">
+            <i data-lucide="shopping-cart"></i>
+          </div>
+          <h3>Comprar Productos</h3>
+          <p>Nutrición de calidad para tu día a día</p>
+
+          <ul>
+            <li>Compra directa sin intermediarios</li>
+            <li>Envío a domicilio en 24-48h</li>
+            <li>Asesoramiento personalizado</li>
+            <li>Descuentos por volumen</li>
+          </ul>
+
+          <a href="https://jenniferdiana.herbalife.com/es-es/u"
+             class="cta cta-product" target="_blank">
+            <i data-lucide="external-link"></i>
+            Ir a la tienda oficial
+          </a>
+
+          <p style="font-size:.8rem;opacity:.7;margin-top:12px">
+            Web oficial Herbalife segura
+          </p>
+        </div>
+
+        <!-- NEGOCIO -->
+        <div class="choice-card business">
+          <div class="choice-icon">
+            <i data-lucide="trending-up"></i>
+          </div>
+          <h3>Ser Distribuidora</h3>
+          <p>Desarrolla tu actividad independiente</p>
+
+          <ul>
+            <li>Acompañamiento personalizado</li>
+            <li>Formación continua</li>
+            <li>Horario flexible</li>
+            <li>Ingresos según dedicación</li>
+          </ul>
+
+          <button class="cta cta-business" onclick="mostrarFormulario()">
+            <i data-lucide="calendar-plus"></i>
+            Solicitar entrevista
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-section hidden" id="formulario">
+      <div class="form-box">
+        <div id="paso1">
+          <h3>Paso 1</h3>
+          <div class="form-group">
+            <input id="nombre" placeholder="Nombre completo">
+          </div>
+          <div class="form-group">
+            <input id="telefono" placeholder="WhatsApp">
+          </div>
+          <button class="cta cta-business" onclick="paso2()">Continuar</button>
+        </div>
+
+        <div id="paso2" class="hidden">
+          <h3>Paso 2</h3>
+          <div class="form-group">
+            <select id="situacion">
+              <option value="">Situación actual</option>
+              <option>Curiosa sobre el negocio</option>
+              <option>Ingresos extra</option>
+              <option>Cambio laboral</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input id="email" placeholder="Email (opcional)">
+          </div>
+          <button class="cta cta-business" onclick="enviar()">Enviar solicitud</button>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <!-- STEP 2 -->
-  <div class="form-step" id="step2">
-    <select id="situation2" required>
-      <option value="" disabled selected>¿Cuál es tu situación actual?</option>
-      <option>Solo quiero productos por ahora</option>
-      <option>Curiosa sobre el negocio</option>
-      <option>Busco ingresos extra seriamente</option>
-      <option>Quiero cambiar mi situación laboral</option>
-    </select>
-
-    <input type="email" id="email2" placeholder="Email (opcional)">
-
-    <button onclick="submitForm()">Enviar solicitud</button>
-    <button onclick="goToStep1()">Volver</button>
-  </div>
-</section>
+</div>
 
 <script>
 lucide.createIcons();
 
-/* === NAVEGACIÓN FORMULARIO === */
-function goToStep2(){
-  if(name1.value && phone1.value){
-    step1.classList.remove("active");
-    step2.classList.add("active");
-  } else {
-    alert("Completa nombre y teléfono");
+function mostrarFormulario(){
+  document.getElementById("formulario").classList.remove("hidden");
+  document.getElementById("formulario").scrollIntoView({behavior:"smooth"});
+}
+
+function paso2(){
+  if(!nombre.value || !telefono.value){
+    alert("Completa nombre y WhatsApp");
+    return;
   }
-}
-function goToStep1(){
-  step2.classList.remove("active");
-  step1.classList.add("active");
+  paso1.classList.add("hidden");
+  paso2.classList.remove("hidden");
 }
 
-/* =================================================
-   === ENVÍO REAL A GOOGLE SHEETS (LEADS) ===
-   ================================================= */
-
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwq4pQQ6FgqCqM5_CqCEBgIiToHvNWbIJhbeMmvWgohHhEtxsRXPWo0IKVDs7B1msqX/exec";
-
-function submitForm(){
-
-  const nombre = name1.value.trim();
-  const telefono = phone1.value.trim();
-  const situacion = situation2.value;
-  const email = email2.value.trim();
-
-  if(!nombre || !telefono || !situacion){
-    alert("Completa todos los campos obligatorios");
+function enviar(){
+  if(!situacion.value){
+    alert("Selecciona tu situación");
     return;
   }
 
-  const payload = {
-    nombre: nombre,
-    telefono: telefono,
-    email: email,
-    situacion: situacion,
-    interes: "Negocio Herbalife",
-    mensaje: "",
-    fuente: "Web",
-    pagina: "Nuevodistribuidor.html",
-    dispositivo: /Mobi|Android/i.test(navigator.userAgent) ? "Mobile" : "Desktop",
-    pais: "",
-    ip: ""
-  };
-
-  fetch(SCRIPT_URL, {
-    method: "POST",
-    body: JSON.stringify(payload),
-    headers: { "Content-Type": "application/json" }
-  })
-  .then(r => r.json())
-  .then(() => {
-
-    const msg = encodeURIComponent(
-      `Hola Jennifer 👋\n\nSoy ${nombre}.\nSituación: ${situacion}`
-    );
-
-    window.open(`https://wa.me/34643466223?text=${msg}`, "_blank");
-
-    alert("Solicitud enviada correctamente 😊");
-  })
-  .catch(err => {
-    console.error(err);
-    alert("Error al enviar el formulario");
+  fetch("https://script.google.com/macros/s/AKfycbwq4pQQ6FgqCqM5_CqCEBgIiToHvNWbIJhbeMmvWgohHhEtxsRXPWo0IKVDs7B1msqX/exec",{
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body:JSON.stringify({
+      nombre:nombre.value,
+      telefono:telefono.value,
+      email:email.value,
+      situacion:situacion.value
+    })
+  }).then(()=>{
+    alert("Solicitud enviada correctamente");
   });
 }
 </script>
