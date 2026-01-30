@@ -1085,36 +1085,26 @@ function goToStep1(){
 
 function submitForm(){
 
-  const nombre = document.getElementById('name1').value.trim();
-  const telefono = document.getElementById('phone1').value.trim();
-  const email = document.getElementById('email2').value.trim();
-  const situacion = document.getElementById('situation2').value;
+  const payload = {
+    NOMBRE: document.getElementById("name1").value.trim(),
+    TELEFONO: document.getElementById("phone1").value.trim(),
+    EMAIL: document.getElementById("email2").value.trim(),
+    SITUACION_ACTUAL: document.getElementById("situation2").value,
+    INTERES_PRINCIPAL: "Negocio",
+    MENSAJE: "",
+    FUENTE: "Web",
+    PAGINA_ORIGEN: "Nuevodistribuidor",
+    DISPOSITIVO: navigator.userAgent,
+    PAIS: "",
+    IP: ""
+  };
 
-  if(!situacion){
-    alert('Por favor selecciona tu situación actual');
+  if (!payload.NOMBRE || !payload.TELEFONO || !payload.SITUACION_ACTUAL) {
+    alert("Por favor completa todos los campos obligatorios");
     return;
   }
 
-  const payload = {
-    NOMBRE: nombre,
-    TELEFONO: telefono,
-    EMAIL: email,
-    SITUACION_ACTUAL: situacion,
-    INTERES_PRINCIPAL: "Distribuidora",
-    MENSAJE: "",
-    FUENTE: "Web",
-    PAGINA_ORIGEN: "NuevoDistribuidor",
-    DISPOSITIVO: navigator.userAgent,
-    PAIS: "",
-    IP: "",
-    ESTADO_LEAD: "Nuevo",
-    CONTACTADO: "No",
-    FECHA_CONTACTO: "",
-    OBSERVACIONES: "",
-    ID_LEAD: Date.now().toString()
-  };
-
-  fetch("https://script.google.com/macros/s/AKfycbwq4pQQ6FgqCqM5_CqCEBgIiToHvNWbIJhbeMmvWgohHhEtxsRXPWo0IKVDs7B1msqX/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxkIOpisapATzTOXh4VImugI_qu3WFeMtcfWApsU87uZqxJDBa-2uQuprzqqkWURy9Q/exec", {
     method: "POST",
     mode: "no-cors",
     headers: {
@@ -1123,14 +1113,16 @@ function submitForm(){
     body: JSON.stringify(payload)
   });
 
-  alert("Gracias 🙌 Jennifer te contactará en menos de 24h.");
+  alert("✅ Solicitud enviada correctamente.\nJennifer te contactará en menos de 24 horas.");
 
-  document.getElementById('name1').value = "";
-  document.getElementById('phone1').value = "";
-  document.getElementById('email2').value = "";
-  document.getElementById('situation2').value = "";
+  // Reset formulario
+  document.getElementById("name1").value = "";
+  document.getElementById("phone1").value = "";
+  document.getElementById("email2").value = "";
+  document.getElementById("situation2").selectedIndex = 0;
 
   goToStep1();
+}
 }
 
 
