@@ -1083,49 +1083,13 @@ function goToStep1(){
   document.getElementById('dot1').classList.add('active');
 }
 
-<script>
 function submitForm(){
-
-  const payload = {
-    NOMBRE: document.getElementById("name1").value.trim(),
-    TELEFONO: document.getElementById("phone1").value.trim(),
-    EMAIL: document.getElementById("email2").value.trim(),
-    SITUACION_ACTUAL: document.getElementById("situation2").value,
-    INTERES_PRINCIPAL: "Negocio",
-    MENSAJE: "",
-    FUENTE: "Web",
-    PAGINA_ORIGEN: "Nuevodistribuidor",
-    DISPOSITIVO: navigator.userAgent,
-    PAIS: "",
-    IP: ""
-  };
-
-  if (!payload.NOMBRE || !payload.TELEFONO || !payload.SITUACION_ACTUAL) {
-    alert("Por favor completa todos los campos obligatorios");
-    return;
+  if(document.getElementById('situation2').value){
+    alert('Gracias Jennifer te contactará por WhatsApp en menos de 24 horas.');
+  } else {
+    alert('Por favor selecciona tu situación actual');
   }
-
-  fetch("https://script.google.com/macros/s/AKfycbxkIOpisapATzTOXh4VImugI_qu3WFeMtcfWApsU87uZqxJDBa-2uQuprzqqkWURy9Q/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
-
-  alert("✅ Solicitud enviada correctamente.\nJennifer te contactará en menos de 24 horas.");
-
-  // Reset formulario
-  document.getElementById("name1").value = "";
-  document.getElementById("phone1").value = "";
-  document.getElementById("email2").value = "";
-  document.getElementById("situation2").selectedIndex = 0;
-
-  goToStep1();
 }
-</script>
-
 
 // FAQ toggle
 function toggleFaq(element){
